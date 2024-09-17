@@ -1,0 +1,28 @@
+/* Estilos globais */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos dos títulos e parágrafos */
+  h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: clamp(20px, 4vw, 32px);
+    text-align: center;
+  }
+  
+  h4 {
+    font-size: clamp(18px, 3vw, 28px);
+    text-align: center;
+  }
+  
+  p {
+    font-size: clamp(16px, 2.5vw, 24px);
+    text-align: justify;
+    text-indent: 2em;
+    padding: 0 20px;
+  }

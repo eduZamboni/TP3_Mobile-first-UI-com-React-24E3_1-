@@ -1,0 +1,96 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.conteudo {
+    min-height: 100vh;
+    padding-bottom: 60px; 
+    box-sizing: border-box;
+}
+
+/* Menu */
+.menu {
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    flex: 1;
+    text-align: center;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.menu li a:hover {
+    background-color: #111;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}
+
+.icone-menu {
+    width: 30px;
+    height: 30px;
+}
+
+.menu-icon {
+    display: none;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* Menu responsivo - Mobile First */
+@media (max-width: 600px) {
+    .menu ul {
+        display: none;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .icone-menu {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 601px) {
+    .menu ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
