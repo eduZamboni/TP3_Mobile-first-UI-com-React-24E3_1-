@@ -1,0 +1,95 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu */
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    width: 100px; /* Definindo a largura da logo */
+    height: auto;
+}
+
+/* Menu itens e estilo do ícone do menu */
+.menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    background-color: #333;
+}
+
+.menu-items li {
+    margin: 0;
+}
+
+.menu-items li a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    display: block;
+}
+
+.menu-items li a:hover {
+    background-color: #444;
+}
+
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+/* Ocultando o checkbox do menu */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo para quando o menu estiver expandido no mobile */
+#menu-toggle:checked + .menu-icon + .menu-items {
+    display: flex;
+}
+
+/* Estilo para telas maiores (desktop) */
+@media (min-width: 768px) {
+    .menu-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu-items li {
+        margin-left: 20px;
+    }
+
+    .menu-items li a {
+        padding: 10px 15px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .logo {
+        width: 150px; /* Aumentando o tamanho da logo em telas maiores */
+    }
+}
