@@ -1,42 +1,59 @@
-import React, { useState } from 'react';
-import TodoList from './Components/TodoList';
+import Header from './Components/Header';
+import Menu from './Components/Menu';
+import Post from './Components/Post';
+import Friend from './Components/Friend';
+import './styles.css';
 
 export default function App() {
-  const [tarefas, setTarefas] = useState([
-    { id: 1, text: 'Estudar React', isCompleted: false },
-    { id: 2, text: 'Estudar Node', isCompleted: false },
-    { id: 3, text: 'Estudar JavaScript', isCompleted: false }
-  ]);
-
-  const addTask = (newTaskText) => {
-    if (newTaskText.trim() !== '') {
-      const newTask = {
-        id: Date.now(),
-        text: newTaskText,
-        isCompleted: false
-      };
-      setTarefas([...tarefas, newTask]);
-    }
-  };
-
-  const completeTask = (taskId) => {
-    setTarefas(tarefas.map(tarefa =>
-      tarefa.id === taskId ? { ...tarefa, isCompleted: true } : tarefa
-    ));
-  };
-
-  const deleteTask = (taskId) => {
-    setTarefas(tarefas.filter(tarefa => tarefa.id !== taskId));
-  };
-
   return (
-    <div>
-      <TodoList
-        tarefas={tarefas}
-        addTask={addTask}
-        completeTask={completeTask}
-        deleteTask={deleteTask}
-      />
+    <div className="container">
+      <Header />
+      <Menu />
+      <div className="main-grid">
+        <div className="feed">
+          <Post
+            image="https://via.placeholder.com/600x400"
+            title="Título da Postagem"
+            text="Texto da postagem..."
+            date="12 de Setembro de 2024"
+            author="Amigo 1"
+            likes={120}
+            shares={30}
+            comments={[
+              { author: 'Usuário 1', text: 'Comentário 1' },
+              { author: 'Usuário 2', text: 'Comentário 2' },
+            ]}
+          />
+        </div>
+        <aside className="sidebar">
+          <div className="friends-list">
+            <h3>Amigos</h3>
+            <Friend
+              image="https://via.placeholder.com/50"
+              name="Amigo 2"
+              mutualFriends={10}
+            />
+            <Friend
+              image="https://via.placeholder.com/50"
+              name="Amigo 3"
+              mutualFriends={5}
+            />
+          </div>
+          <div className="suggestions-list">
+            <h3>Sugestões de Amizade</h3>
+            <Friend
+              image="https://via.placeholder.com/50"
+              name="Sugestão 1"
+              mutualFriend="Amigo em Comum"
+            />
+            <Friend
+              image="https://via.placeholder.com/50"
+              name="Sugestão 2"
+              mutualFriend="Amigo em Comum"
+            />
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }

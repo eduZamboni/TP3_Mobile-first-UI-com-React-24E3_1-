@@ -1,15 +1,23 @@
-import SobreMim from './Components/SobreMim';
-import Habilidades from './Components/Habilidades';
+import Header from './components/Header';
+import VideoPlayer from './components/VideoPlayer';
+import VideoActions from './components/VideoActions';
+import VideoDescription from './components/VideoDescription';
+import Advertisement from './components/Advertisement';
+import RelatedVideos from './components/RelatedVideos';
+import Comments from './components/Comments';
+import './App.css';
 
 export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Meu Portfólio</h1>
-      </header>
-      <main>
-        <SobreMim />
-        <Habilidades />
+    <div className="app-container">
+      <Header />
+      <main className="main-content">
+        <VideoPlayer />
+        <VideoActions />
+        <VideoDescription />
+        <Advertisement />
+        <RelatedVideos />
+        <Comments />
       </main>
     </div>
   );

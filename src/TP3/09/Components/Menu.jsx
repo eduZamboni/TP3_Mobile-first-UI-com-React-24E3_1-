@@ -11,7 +11,7 @@ export default function Menu() {
   return (
     <nav className="menu-container">
       <div className="menu-logo">
-        <h1>Meu App</h1>
+        <img src="https://via.placeholder.com/150x40?text=Logo" alt="Logo do App" className="logo-image" />
       </div>
       <button className="menu-toggle" onClick={toggleMenu}>
         {isOpen ? 'Fechar' : 'Menu'}

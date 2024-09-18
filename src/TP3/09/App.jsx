@@ -1,4 +1,4 @@
-import Menu from './Components/menu';
+import Menu from './Components/Menu';
 
 export default function App() {
   return (
